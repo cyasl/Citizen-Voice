@@ -30,8 +30,6 @@ class QuestionSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Question
         fields = ('text', 'order', 'required', 'question_type', 'choices', 'survey', 'is_geospatial', 'map_view')
-        #TODO: map_view is commented out for now because it was causing "ImproperlyConfigured" error
-
 
 class ResponseSerializer(serializers.HyperlinkedModelSerializer):
     """
