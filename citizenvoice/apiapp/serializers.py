@@ -29,7 +29,7 @@ class QuestionSerializer(serializers.HyperlinkedModelSerializer):
     """
     class Meta:
         model = Question
-        fields = ('text', 'order', 'required', 'question_type', 'choices', 'survey', 'is_geospatial') # 'map_view')
+        fields = ('text', 'order', 'required', 'question_type', 'choices', 'survey', 'is_geospatial', 'map_view')
         #TODO: map_view is commented out for now because it was causing "ImproperlyConfigured" error
 
 
@@ -91,6 +91,7 @@ class MapViewSerializer(serializers.HyperlinkedModelSerializer):
     Serialises 'name', 'map_service_url' and 'options'
     fields of the MapView model for the API.
     """
+
     class Meta:
         model = MapView
         fields = ('name', 'map_service_url', 'options')

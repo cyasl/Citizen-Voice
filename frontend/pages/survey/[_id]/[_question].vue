@@ -85,10 +85,9 @@ const route = useRoute()
 const { data: survey } = await useAsyncData(() => $fetch(survey_url + route.params._id));
 
 // TODO: use an API to get n'th question of the selected survey
-let demo_question = parseInt(route.params._question, 10) + 5 // for demo only, I will use (5 + question id)
+let demo_question = 6 // parseInt(route.params._question, 10) + 5 // for demo only, I will use (5 + question id)
 let { data: question } = await useAsyncData(() => $fetch(question_url + demo_question));
-// TODO: get question.map_view once APIs are configured
-const { data: map_view } = await useAsyncData(() => $fetch(mapview_url + 5)); // for demo only, I will use 5th
+const { data: map_view } = question.map_view // await useAsyncData(() => $fetch(mapview_url + 5)); // for demo only
 
 // to set up the map
 // const center = ref([47.41322, -1.219482])
